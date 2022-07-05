@@ -12,6 +12,7 @@
                     :class="{ 'text-grey-60': syncable && isSynced }"
                     v-text="labelText"
                     v-tooltip="{content: config.handle, delay: 500, autoHide: false}"
+                    v-if="!config.hide_display"
                 />
                 <i class="required ml-sm" v-if="config.required">*</i>
                 <avatar v-if="isLocked" :user="lockingUser" class="w-4 rounded-full -mt-px ml-1 mr-1" v-tooltip="lockingUser.name" />
@@ -71,12 +72,12 @@
         </slot>
 
         <div
-            class="help-block mt-1"
+            class="mt-1 help-block"
             v-if="instructions && config.instructions_position === 'below'"
             v-html="instructions" />
 
         <div v-if="hasError">
-            <small class="help-block text-red mt-1 mb-0" v-for="(error, i) in errors" :key="i" v-text="error" />
+            <small class="mt-1 mb-0 help-block text-red" v-for="(error, i) in errors" :key="i" v-text="error" />
         </div>
     </div>
     </publish-field-meta>
