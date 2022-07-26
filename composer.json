@@ -50,16 +50,6 @@
         }
     },
     "extra": {
-        "download-dist": [
-            {
-                "url": "https://github.com/statamic/cms/releases/download/{$version}/dist.tar.gz",
-                "path": "resources/dist"
-            },
-            {
-                "url": "https://github.com/statamic/cms/releases/download/{$version}/dist-frontend.tar.gz",
-                "path": "resources/dist-frontend"
-            }
-        ],
         "laravel": {
             "providers": [
                 "Statamic\\Providers\\StatamicServiceProvider"
